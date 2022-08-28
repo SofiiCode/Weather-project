@@ -1,0 +1,61 @@
+.row{
+    width: 100%;
+    padding-top: 20px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+}
+.current-city-container{
+   background: linear-gradient(89deg, rgb(21, 74, 189) 0.1%, rgb(26, 138, 211) 51.5%, rgb(72, 177, 234) 100.2%);
+    border-radius: 4px;
+    opacity: 0.8;
+    width: 100%;
+    margin: 20px 0;
+    color: white;
+    padding-bottom: 20px;
+}
+#current-temp{
+    display:inline-block;
+    font-weight: 600;
+
+}
+#celsius, #fareng {
+    
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+}
+.btn{
+    margin-left: 10px;
+     width: 90px;
+}
+
+.stick{
+    padding: 5px;
+    color: white;
+}
+
+.currentEmoji{
+    display:block;
+    margin-top: 10px;
+}
+.col{
+   
+   padding-left: 60px;
+}
+.day-card{
+     margin-right: 1px;
+      border-radius: 4px;
+      background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+   
+}
+
+.cards-container{
+    text-align: center;
+    padding-top: 0;
+   
+}
+.day-card img{
+    padding-bottom: 20px;
+}
+
