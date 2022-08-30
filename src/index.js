@@ -63,7 +63,7 @@ function showWeather(response) {
 
  
  let city = document.querySelector("#city");
- city.innerHTML = response.data.name;
+ city.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
  
   console.log(response)
   let currentTemp = document.querySelector("#current-temp");
@@ -76,7 +76,7 @@ function showWeather(response) {
   wind.innerHTML = Math.round(response.data.wind.speed);
 
   let weather = document.querySelector('#weather');
-  weather.innerHTML = response.data.weather[0].main;
+  weather.innerHTML = response.data.weather[0].description;
 
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
