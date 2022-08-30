@@ -40,6 +40,7 @@
     color: white;
     font-weight: 400;
     text-decoration: none;
+    
 }
 .btn{
     margin-left: 10px;
@@ -49,6 +50,7 @@
 .stick{
     padding: 5px;
     color: white;
+
 }
 .weather-description{
     padding-top: 20px;
@@ -68,7 +70,12 @@
 }
 #weather{
     padding-top: 10px;
+}
+#weather:first-letter{
     text-transform: capitalize;
+}
+.weather-container img{
+    width: 70px;
 }
 .weather-description-container{
     display: flex;

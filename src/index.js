@@ -80,7 +80,11 @@ function showWeather(response) {
 
   let pressure = document.querySelector("#pressure");
   pressure.innerHTML = response.data.main.pressure;
-
+  let icon = document.querySelector("#current-img");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   let celsiusTemp = currentTemp.innerHTML;
   celsiusLink.addEventListener("click", function (event) {
     event.preventDefault();
