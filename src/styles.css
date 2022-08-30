@@ -18,6 +18,27 @@
 .buttons{
     padding-right: 0;
 }
+.btn-primary{
+    background: #EC6E4C;
+    border: 0;
+    
+    transition: all,2s, ease-in-out;
+}
+.btn-primary:hover{
+    opacity: 0.9;
+    background: #EC6E4C;
+}
+.btn-warning{
+    background: #48484A;
+     border: 0;
+     color: white;
+}
+.btn-warning:hover{
+    opacity: 0.9;
+    background: #48484A;
+    color: white;
+}
+
 .current-city-container{
     width: 100%;
    background: linear-gradient(89deg, rgb(21, 74, 189) 0.1%, rgb(26, 138, 211) 51.5%, rgb(72, 177, 234) 100.2%);
