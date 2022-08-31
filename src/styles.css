@@ -61,7 +61,14 @@
     color: white;
     font-weight: 400;
     text-decoration: none;
+    transition: color 200ms ;
     
+}
+#celsius:hover{
+     color: #48484A;
+}
+#fareng:hover{
+     color: #48484A;
 }
 .btn{
     margin-left: 10px;
