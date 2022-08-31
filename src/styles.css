@@ -89,9 +89,6 @@
     width: 80%;
     margin: 0 auto;
 }
-#weather{
-    padding-top: 10px;
-}
 #weather:first-letter{
     text-transform: capitalize;
 }

@@ -61,7 +61,8 @@ const currentBtn = document.querySelector(".btn-warning");
 
 function showWeather(response) {
 
- 
+ console.log(response.data.dt*1000)
+
  let city = document.querySelector("#city");
  city.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
  
@@ -96,6 +97,8 @@ function showWeather(response) {
     let fahrenTemp = Math.round(celsiusTemp * 1.8 + 32.0);
     currentTemp.innerHTML = `${fahrenTemp}`;
   });
+
+  
 }
   //  let currentCityInput = document.querySelector("#exampleDataList");
   //  currentCityInput.innerHTML="";
