@@ -132,22 +132,19 @@ function showCurrentLocation () {
 function displayForecast(){
   let forecastElement = document.querySelector("#forecast");
   let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
   ];
   let forecastHTML =`<div class="row">`  ;
   days.forEach(function(day){
     forecastHTML =
       forecastHTML +
-            `<div class="col-2 cards-container">
+            `<div class="col-3 cards-container">
               <h4>${day}</h4>
-              <span><small>06.10</small></span>
-              <img src="images/sunclouds.png" alt="" width="50px" />
+              <span><small>06.10</small></span><br>
+              <img src="images/sunclouds.png" alt="" width="50px" /><br>
               <span >desc</span> <br>
               <span><strong>21°С</strong></span>
               <span><small>14°С</small></span>

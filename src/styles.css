@@ -14,17 +14,18 @@ h4{
 }
 .input-city{
     justify-content: space-between;
-     margin-bottom: 30px;
+     margin-bottom: 20px;
      width: 100%;
     
 }
 .buttons{
     padding-right: 0;
+    
 }
 .btn-primary{
     background: #EC6E4C;
     border: 0;
-    
+    margin-bottom: 10px;
     transition: all,2s, ease-in-out;
 }
 .btn-primary:hover{
