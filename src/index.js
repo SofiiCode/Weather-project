@@ -54,27 +54,71 @@ askCity();
 
 const celsiusLink = document.querySelector("#celsius");
 const farenLink = document.querySelector("#fareng");
-const searchBtn = document.querySelector(".input-city");
+const searchBtn = document.querySelector(".btn-primary");
 const currentBtn = document.querySelector(".btn-warning");
+const currentDayP = document.querySelector("#day");
 
 window.addEventListener("load", showCurrentLocation);
-displayForecast();
+
+function currentDate() {
+  let now = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let currentDay = days[now.getDay()];
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hour = now.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+
+  return `${currentDay} ${hour}:${minutes}`;
+}
+
+currentDayP.innerHTML = currentDate();
+
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000)
+  let day = date.getDay();
+   let days = [
+     "Sun",
+     "Mon",
+     "Tue",
+     "Wed",
+     "Thu",
+     "Fri",
+     "Sat",
+   ];
+return days[day]
+};
 
 function displayForecast(response) {
-  console.log(response.data);
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "Wed"];
+  let forecast = response.data.daily;
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col-3 cards-container">
-              <h4>${day}</h4>
-              <span><small>06.10</small></span><br>
-              <img src="images/sunclouds.png" alt="" width="50px" /><br>
-              <span >desc</span> <br>
-              <span><strong>21°С</strong></span>
-              <span><small>14°С</small></span>
+              <h4>${formatDay(forecastDay.dt)}</h4>
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="" width="50px" /><br>
+              <span >${forecastDay.weather[0].main}</span> <br>
+              <span><strong>${Math.round(
+                forecastDay.temp.max
+              )}°С</strong></span>
+              <span><small>${Math.round(forecastDay.temp.min)}°С</small></span>
             </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
@@ -83,8 +127,8 @@ function displayForecast(response) {
 
 function getForecast(cordinates) {
   console.log(cordinates);
-  let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
-  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${cordinates.lat}&lon=${cordinates.lon}&appid=${apiKey}&units=metric`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -144,6 +188,7 @@ function getCity(event) {
   let currentCityInput = document.querySelector("#exampleDataList").value;
   let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCityInput}&appid=${apiKey}&units=metric`;
+ console.log(apiUrl)
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -157,32 +202,7 @@ function showCurrentLocation() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-searchBtn.addEventListener("submit", getCity);
+searchBtn.addEventListener("click", getCity);
 currentBtn.addEventListener("click", showCurrentLocation);
 
-const currentDayP = document.querySelector("#day");
-function currentDate() {
-  let now = new Date();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  let currentDay = days[now.getDay()];
-  let minutes = now.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  let hour = now.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
 
-  return `${currentDay} ${hour}:${minutes}`;
-}
-
-currentDayP.innerHTML = currentDate();
