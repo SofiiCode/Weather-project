@@ -42,33 +42,34 @@
         <div class="col-5 buttons">
           <input type="submit" value="Search" class="btn btn-primary shadow">
           <button class="btn btn-warning shadow">Current</button>
-          
+         </div>
+      </form>
+      <div class="row current-city-container shadow">
+        <div class="col">
+          <h1 class="current-city" id="city"></h1>
+          <p id="day"></p>
+          <div class="weather-container">
+            <img src="#" class="currentEmoji" id="current-img" alt="" width="50px" />
+            <p id="weather"></p>
           </div>
-    </form>
-    <div class="row current-city-container shadow">
-      <div class="col">
-        <h1 class="current-city" id="city"></h1>
-        <p id="day"></p>
-        <div class="weather-container">
-          <img src="#" class="currentEmoji" id="current-img" alt="" width="50px" />
-          <p id="weather"></p>
+          
         </div>
-        
-      </div>
       
-      <div class="col weather-description-container">
-        <div>
-          <h1 id="current-temp"></h1>
-          <a href="#" id="celsius">°С <span class="stick">|</span></a>
-          <a href="#" id="fareng">F</a>
+        <div class="col weather-description-container">
+          <div>
+            <h1 id="current-temp"></h1>
+            <a href="#" id="celsius">°С <span class="stick">|</span></a>
+            <a href="#" id="fareng">F</a>
+          </div>
+          <div class="description-container">
+            <p class="weather-description">Humidity: <span id="humidity"></span> %  <br />Wind: <span id="wind"></span>  km/h <br />Pressure: <span id="pressure"></span> P(h) </p>
+          </div>
         </div>
-        <div class="description-container">
-          <p class="weather-description">Humidity: <span id="humidity"></span> %  <br />Wind: <span id="wind"></span>  km/h <br />Pressure: <span id="pressure"></span> P(h) </p>
+        <div class="weather-forecast" id="forecast">
+          
         </div>
       </div>
-        
-      </div>
-      <div class="row cards-container">
+        <!-- <div class="row cards-container">
         <div class="col day-card shadow">
           <h4>Sat 06</h4>
           <img src="images/sunclouds.png" alt="" width="50px" />
@@ -108,7 +109,7 @@
           <h2>-10°С</h2>
           <h5>-12°С</h5>
         </div>
-      </div>
+      </div> -->
       <div class="coder"><a href="https://github.com/SofiiCode/Weather-project.git">Open-source code</a> <span>by Sofiia Andrusyshyn</span> </div>
     </div>
     
