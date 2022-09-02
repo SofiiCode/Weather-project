@@ -18,14 +18,24 @@ h4{
      width: 100%;
     
 }
+.form-control{
+    width: 300px;
+    margin-bottom: 10px;
+}
 .buttons{
+    width: 200px;
     padding-right: 0;
+    float: right;
+
     
+}
+.btn{
+     width: 90px;
 }
 .btn-primary{
     background: #EC6E4C;
     border: 0;
-    margin-bottom: 10px;
+    
     transition: all,2s, ease-in-out;
 }
 .btn-primary:hover{
@@ -35,6 +45,7 @@ h4{
 .btn-warning{
     background: #48484A;
      border: 0;
+     margin-left: 10px;
      color: white;
 }
 .btn-warning:hover{
@@ -74,10 +85,7 @@ h4{
 #fareng:hover{
      color: #48484A;
 }
-.btn{
-    margin-left: 10px;
-     width: 90px;
-}
+
 
 .stick{
     padding: 5px;
