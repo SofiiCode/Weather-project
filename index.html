@@ -22,21 +22,21 @@
 
   </head>
   <body>
-    <video  autoplay muted loop playsinline webkit-playinginline>
+    <!-- <video  autoplay muted loop playsinline webkit-playinginline>
       <source src="images\A guy searching for a place to fish on a rocky coast.mp4">
-    </video>
+    </video> -->
+    <img src="images\pexels-max-andrey-1254736.jpg" id="bg">
     <div class="container">
       <form class="input-city row">
         <div class="col">
             <input
             class="form-control shadow"
-            list="datalistOptions"
-            id="exampleDataList"
+            id="input"
             placeholder="Type a city..." 
           />
         </div>
         <div class="col buttons">
-          <input type="submit" value="Search" class="btn btn-search shadow">
+          <button class="btn btn-search shadow">Search</button>
           <button class="btn btn-current shadow">Current</button>
          </div>
       </form>
