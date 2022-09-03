@@ -13,11 +13,10 @@ a{
     color: white;
 }
 body{
-    background-image: url("images\pexels-max-andrey-1254736.jpg");
-}
-#bg{
-    position: absolute;
-    width: 100%;
+    background: url(https://images.pexels.com/photos/1254736/pexels-photo-1254736.jpeg) no-repeat fixed center;
+    background-size: cover;
+    box-sizing: border-box;
+
 }
 .container{
     max-width: 600px;
@@ -117,7 +116,6 @@ body{
 .coder{
     margin-top: 20px;
     font-size: small;
-    position: relative;
     color: white;
 }
 .card{
