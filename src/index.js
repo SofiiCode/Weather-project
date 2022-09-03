@@ -82,23 +82,7 @@ function getForecast(cordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
-function getCity(event) {
-  event.preventDefault();
-  let currentCityInput = document.querySelector("#input").value;
-  let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCityInput}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(showWeather);
-}
 
-function showCurrentLocation() {
-  navigator.geolocation.getCurrentPosition(handlePosition);
-}
-function handlePosition(position) {
-  let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showWeather);
-}
 function showWeather(response) {
   let city = document.querySelector("#city");
   city.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
@@ -124,7 +108,24 @@ function showWeather(response) {
   getForecast(response.data.coord);
 }
 
+function getCity(event) {
+  event.preventDefault();
+  let currentCityInput = document.querySelector("#input").value;
+  let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCityInput}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showWeather);
+}
 
+
+function handlePosition(position) {
+  let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+function showCurrentLocation() {
+  navigator.geolocation.getCurrentPosition(handlePosition);
+}
 
 
 searchBtn.addEventListener("click", getCity);
