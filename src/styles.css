@@ -73,27 +73,6 @@ h4{
     font-size: 58px;
 
 }
-#celsius, #fareng {
-    
-    color: white;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 200ms ;
-    
-}
-#celsius:hover{
-     color: #48484A;
-}
-#fareng:hover{
-     color: #48484A;
-}
-
-
-.stick{
-    padding: 5px;
-    color: white;
-
-}
 .weather-description{
     padding-top: 20px;
 }

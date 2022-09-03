@@ -1,56 +1,3 @@
-// let weather = {
-//   paris: {
-//     temp: 19.7,
-//     humidity: 80,
-//   },
-//   tokyo: {
-//     temp: 17.3,
-//     humidity: 50,
-//   },
-//   lisbon: {
-//     temp: 30.2,
-//     humidity: 20,
-//   },
-//   "san francisco": {
-//     temp: 20.9,
-//     humidity: 100,
-//   },
-//   oslo: {
-//     temp: -5,
-//     humidity: 20,
-//   },
-// };
-
-// write your code here
-
-/*
-function askCity(){
-  let city = prompt('Enter a city');
-  city = city.trim();
-
-   if(weather[city]!== undefined){
-        let curCity = city.replace(/^[^a-zа-яё]*([a-zа-яё])/i, function(m){
-                return m.toUpperCase();
-            }); 
-        
-        let celsiusTemp = Math.round(weather[city].temp);
-        let fahrenTemp = Math.round((weather[city].temp*1.8000)+32.00);
-        
-        let curHumidity = weather[city].humidity ;
-        alert(`It is currently ${celsiusTemp} °C  (${fahrenTemp}°F)  in ${curCity} with a humidity of ${curHumidity} %`)
-    }
-    else if(city.length<=0){
-      alert('Pleace, enter a city!');
-      askCity();
-    }
-    else{
-        let link =  `https://www.google.com/search?q=weather+${city}`;
-        alert(`Sorry, we don't know the weather for this city, try going to ${link} `);
-        //window.location.href = `https://www.google.com/search?q=weather+${city}`;
-    };
-}
-askCity();
-*/
 
 const celsiusLink = document.querySelector("#celsius");
 const farenLink = document.querySelector("#fareng");
@@ -135,19 +82,6 @@ function getForecast(cordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
-function convertUnits(currentTemp) {
-  let celsiusTemp = currentTemp.innerHTML;
-  celsiusLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    currentTemp.innerHTML = `${celsiusTemp}`;
-  });
-  farenLink.addEventListener("click", function (event) {
-    event.preventDefault();
-    celsiusTemp = Number(celsiusTemp);
-    let fahrenTemp = Math.round(celsiusTemp * 1.8 + 32.0);
-    currentTemp.innerHTML = `${fahrenTemp}`;
-  });
-}
 
 function showWeather(response) {
   let city = document.querySelector("#city");
@@ -155,7 +89,7 @@ function showWeather(response) {
 
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = Math.round(response.data.main.temp);
-  convertUnits(currentTemp);
+  
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
 
@@ -173,15 +107,6 @@ function showWeather(response) {
 
   getForecast(response.data.coord);
 }
-
-//  let currentCityInput = document.querySelector("#exampleDataList");
-//  currentCityInput.innerHTML="";
-//  console.log(currentCityInput);
-// function showTemp(response) {
-//   console.log(response);
-//   let temp = document.querySelector("#current-temp");
-//   temp.innerHTML = Math.round(response.data.main.temp);
-// }
 
 function getCity(event) {
   event.preventDefault();
