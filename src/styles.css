@@ -86,15 +86,15 @@ h4{
   margin: 0 auto;
 }
 .weather-container{
-    width: 80%;
-   
+   text-align: center;
+}
+.weather-container img{
+   margin: 0 auto;
 }
 #weather:first-letter{
     text-transform: capitalize;
 }
-.weather-container img{
-    width: 70px;
-}
+
 .weather-description-container{
     display: flex;
     height: 100%;
