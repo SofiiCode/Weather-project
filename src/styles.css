@@ -71,7 +71,7 @@ body{
 }
 .current-city-container{
     width: 100%;
-   background: linear-gradient(89deg, rgb(21, 74, 189) 0.1%, rgb(26, 138, 211) 51.5%, rgb(72, 177, 234) 100.2%);
+    background: #48484A;
     border-radius: 4px;
     opacity: 0.8;
     color: white;
