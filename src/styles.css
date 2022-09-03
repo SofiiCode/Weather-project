@@ -32,23 +32,24 @@ h4{
 .btn{
      width: 90px;
 }
-.btn-primary{
+.btn-search{
     background: #EC6E4C;
     border: 0;
-    
+    color: white;
     transition: all,2s, ease-in-out;
 }
-.btn-primary:hover{
+.btn-search:hover{
     opacity: 0.9;
+    color: white;
     background: #EC6E4C;
 }
-.btn-warning{
+.btn-current{
     background: #48484A;
      border: 0;
      margin-left: 10px;
      color: white;
 }
-.btn-warning:hover{
+.btn-current:hover{
     opacity: 0.9;
     background: #48484A;
     color: white;
@@ -69,6 +70,7 @@ h4{
 #current-temp{
     display:inline-block;
     font-weight: 600;
+    font-size: 58px;
 
 }
 #celsius, #fareng {
@@ -106,7 +108,7 @@ h4{
 }
 .weather-container{
     width: 80%;
-    margin: 0 auto;
+   
 }
 #weather:first-letter{
     text-transform: capitalize;
@@ -124,7 +126,7 @@ h4{
 }
 .cards-container{
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 /* .day-card{
      margin-right: 1px;

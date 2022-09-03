@@ -54,8 +54,8 @@ askCity();
 
 const celsiusLink = document.querySelector("#celsius");
 const farenLink = document.querySelector("#fareng");
-const searchBtn = document.querySelector(".btn-primary");
-const currentBtn = document.querySelector(".btn-warning");
+const searchBtn = document.querySelector(".btn-search");
+const currentBtn = document.querySelector(".btn-current");
 const currentDayP = document.querySelector("#day");
 
 window.addEventListener("load", showCurrentLocation);
@@ -164,9 +164,6 @@ function showWeather(response) {
 
   let weather = document.querySelector("#weather");
   weather.innerHTML = response.data.weather[0].description;
-
-  let pressure = document.querySelector("#pressure");
-  pressure.innerHTML = response.data.main.pressure;
 
   let icon = document.querySelector("#current-img");
   icon.setAttribute(
