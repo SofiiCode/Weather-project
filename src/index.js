@@ -129,6 +129,6 @@ function showCurrentLocation() {
 
 getCity()
 searchBtn.addEventListener("submit", getCity);
-currentBtn.addEventListener("click", showCurrentLocation);
+currentBtn.addEventListener("submit", showCurrentLocation);
 
 
