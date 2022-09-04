@@ -5,7 +5,7 @@ const searchBtn = document.querySelector("#search");
 const currentBtn = document.querySelector("#current");
 const currentDayP = document.querySelector("#day");
 
-window.addEventListener("load", getCity);
+// window.addEventListener("load", getCity);
 
 function currentDate() {
   let now = new Date();
@@ -127,7 +127,7 @@ function showCurrentLocation() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-
+// getCity()
 searchBtn.addEventListener("click", getCity);
 currentBtn.addEventListener("click", showCurrentLocation);
 
