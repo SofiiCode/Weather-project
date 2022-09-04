@@ -1,8 +1,8 @@
 
 const celsiusLink = document.querySelector("#celsius");
 const farenLink = document.querySelector("#fareng");
-const searchBtn = document.querySelector(".btn-search");
-const currentBtn = document.querySelector(".btn-current");
+const searchBtn = document.querySelector("#search");
+const currentBtn = document.querySelector("#current");
 const currentDayP = document.querySelector("#day");
 
 window.addEventListener("load", getCity);
