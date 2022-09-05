@@ -6,7 +6,7 @@ const currentBtn = document.querySelector("#current");
 const currentDayP = document.querySelector("#day");
 const form = document.querySelector("form");
 
-// window.addEventListener("load", getCity);
+window.addEventListener("load", getCity);
 
 function currentDate() {
   let now = new Date();
@@ -75,7 +75,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
 function getForecast(cordinates) {
   console.log(cordinates);
   let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
@@ -105,10 +104,8 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
   getForecast(response.data.coord);
 }
-
 function getCity(event) {
   event.preventDefault();
   let currentCityInput = document.querySelector("#input").value;
@@ -117,21 +114,19 @@ function getCity(event) {
   console.log(apiUrl);
   axios.get(apiUrl).then(showWeather);
 }
-
-
 function handlePosition(position) {
   let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
-function showCurrentLocation() {
+function showCurrentLocation(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(handlePosition);
+  document.querySelector("#input").value ="";
 }
 
-// getCity()
-// searchBtn.addEventListener("submit", getCity);
 form.addEventListener("submit", getCity);
 currentBtn.addEventListener("click", showCurrentLocation);
-showCurrentLocation();
+
 
 

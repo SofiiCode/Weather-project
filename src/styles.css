@@ -51,7 +51,7 @@ body{
     background: #EC6E4C;
     border: 0;
     color: white;
-    transition: all,2s, ease-in-out;
+     transition: all,2s, ease-in-out;
 }
 .btn-search:hover{
     opacity: 0.9;
@@ -63,6 +63,7 @@ body{
     border: 0;
     margin-left: 10px;
     color: white;
+    transition: all,2s, ease-in-out;
 }
 .btn-current:hover{
     opacity: 0.9;
