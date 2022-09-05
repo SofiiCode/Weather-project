@@ -4,6 +4,7 @@ const farenLink = document.querySelector("#fareng");
 const searchBtn = document.querySelector("#search");
 const currentBtn = document.querySelector("#current");
 const currentDayP = document.querySelector("#day");
+const form = document.querySelector("form");
 
 // window.addEventListener("load", getCity);
 
@@ -108,8 +109,8 @@ function showWeather(response) {
   getForecast(response.data.coord);
 }
 
-function getCity() {
-  //event.preventDefault();
+function getCity(event) {
+  event.preventDefault();
   let currentCityInput = document.querySelector("#input").value;
   let apiKey = "6876f80c7fdc4d4f6b847b1ddd6523b8";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${currentCityInput}&appid=${apiKey}&units=metric`;
@@ -127,8 +128,10 @@ function showCurrentLocation() {
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
-getCity()
-searchBtn.addEventListener("submit", getCity);
-currentBtn.addEventListener("submit", showCurrentLocation);
+// getCity()
+// searchBtn.addEventListener("submit", getCity);
+form.addEventListener("submit", getCity);
+currentBtn.addEventListener("click", showCurrentLocation);
+showCurrentLocation();
 
 
